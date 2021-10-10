@@ -1,0 +1,62 @@
+let navbar    = document.querySelector(".navbar");
+let searchBox = document.querySelector(".search-box .bx-search");
+
+
+searchBox.addEventListener("click", ()=>{
+  navbar.classList.toggle("showInput");
+
+  if(navbar.classList.contains("showInput")){
+    searchBox.classList.replace("bx-search" ,"bx-x");
+  } else {
+    searchBox.classList.replace("bx-x" ,"bx-search");
+  }
+
+});
+
+
+let navLinks        = document.querySelector(".nav-links");
+let menuOpenBtn     = document.querySelector(".navbar .bx-menu");
+let menuCloseBtn    = document.querySelector(".nav-links .bx-x");
+let htmlcssArrow    = document.querySelector(".htmlcss-arrow");
+let moreArrow       = document.querySelector(".more-arrow");
+let jsArrow         = document.querySelector(".js-arrow");
+
+menuOpenBtn.onclick = function() {
+  navLinks.style.left = "0";
+}
+
+menuCloseBtn.onclick = function() {
+  navLinks.style.left  = "-100%";
+}
+
+
+
+htmlcssArrow.onclick = function() {
+  navLinks.classList.toggle("show1");
+}
+
+moreArrow.onclick = function() {
+  navLinks.classList.toggle("show2");
+}
+
+jsArrow.onclick = function() {
+  navLinks.classList.toggle("show3");
+}
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+
+    this.classList.toggle("active");
+
+  
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
